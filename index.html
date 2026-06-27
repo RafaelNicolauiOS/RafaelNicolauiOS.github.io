@@ -1111,7 +1111,13 @@
 <!-- FOOTER -->
 <footer>
   <span>Rafael Nicolau · Tech Lead iOS</span>
-  <span>© 2026</span>
+  <div style="display:flex; align-items:center; gap: 1.5rem;">
+    <span style="display:flex; align-items:center; gap:6px;">
+      <span style="color: var(--accent2); font-size:10px;">●</span>
+      <span id="visit-count" style="color: var(--muted);">carregando visitas...</span>
+    </span>
+    <span>© 2026</span>
+  </div>
 </footer>
 
 <script>
@@ -1151,6 +1157,20 @@
   }
 
   setTimeout(typeNext, 800);
+
+  // Visitor counter
+  fetch('https://api.countapi.xyz/hit/rafaelnicolauios-github-io/visits')
+    .then(r => r.json())
+    .then(data => {
+      const el = document.getElementById('visit-count');
+      if (el && data.value) {
+        el.textContent = data.value.toLocaleString('pt-BR') + ' visitas';
+      }
+    })
+    .catch(() => {
+      const el = document.getElementById('visit-count');
+      if (el) el.textContent = '';
+    });
 
   // Fade-in on scroll
   const observer = new IntersectionObserver((entries) => {
