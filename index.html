@@ -601,6 +601,115 @@
     font-size: 16px;
   }
 
+  /* ── OPEN TO WORK ── */
+  .otw-section {
+    background: linear-gradient(135deg, rgba(10,132,255,0.06) 0%, rgba(48,209,88,0.04) 100%);
+    border-top: 1px solid rgba(10,132,255,0.2);
+    border-bottom: 1px solid rgba(10,132,255,0.2);
+  }
+
+  .otw-inner {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .otw-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .otw-pulse {
+    position: relative;
+    width: 14px;
+    height: 14px;
+  }
+
+  .otw-pulse::before,
+  .otw-pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--accent2);
+  }
+
+  .otw-pulse::before {
+    animation: pulse-ring 1.8s ease-out infinite;
+    opacity: 0;
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+
+  .otw-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent2);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .otw-content { flex: 1; min-width: 260px; }
+
+  .otw-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .otw-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .otw-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .otw-role-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid;
+    transition: background 0.2s;
+  }
+
+  .otw-role-tag.blue {
+    color: var(--accent);
+    border-color: rgba(10,132,255,0.35);
+    background: rgba(10,132,255,0.08);
+  }
+
+  .otw-role-tag.green {
+    color: var(--accent2);
+    border-color: rgba(48,209,88,0.35);
+    background: rgba(48,209,88,0.08);
+  }
+
+  .otw-role-tag.purple {
+    color: #bf5af2;
+    border-color: rgba(191,90,242,0.35);
+    background: rgba(191,90,242,0.08);
+  }
+
+  .otw-cta { flex-shrink: 0; }
+
   /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
@@ -938,6 +1047,36 @@
     <div class="cert-item">Practitioner — Generative AI</div>
     <div class="cert-item">Product Analytics</div>
     <div class="cert-item">Qualidade em Mudanças</div>
+  </div>
+</section>
+
+<!-- OPEN TO WORK -->
+<section id="open-to-work" class="otw-section">
+  <div class="otw-inner fade-up">
+    <div class="otw-badge">
+      <div class="otw-pulse"></div>
+      <span class="otw-label">Open to work</span>
+    </div>
+
+    <div class="otw-content">
+      <h2 class="otw-title">Aberto a novos desafios</h2>
+      <p class="otw-desc">
+        Após anos liderando squads e entregando soluções de alto impacto no Itaú Unibanco,
+        estou em busca de uma nova oportunidade onde possa contribuir com liderança técnica,
+        visão de produto e desenvolvimento de pessoas.
+      </p>
+      <div class="otw-roles">
+        <span class="otw-role-tag blue">⌘ Tech Lead iOS</span>
+        <span class="otw-role-tag blue">⌘ Tech Lead Mobile</span>
+        <span class="otw-role-tag green">◈ Coordenador de TI</span>
+        <span class="otw-role-tag green">◈ Engenheiro de Software Sênior</span>
+        <span class="otw-role-tag purple">✦ Presencial · Híbrido · Remoto</span>
+      </div>
+    </div>
+
+    <div class="otw-cta">
+      <a href="mailto:ri_nicolau@hotmail.com" class="btn btn-primary">Fale comigo</a>
+    </div>
   </div>
 </section>
 
